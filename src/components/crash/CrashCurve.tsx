@@ -11,7 +11,7 @@ const H = 520;
 const PAD_X = 34;
 const PAD_Y = 34;
 
-/** Traço da trajetória + nave "Lumen Shard" (elemento visual original). */
+/** Traço da trajetória + nave "Rocket" (foguete). */
 export function CrashCurve({ curve, phase }: Props) {
   const crashed = phase === "CRASH" || phase === "RESULT";
 
@@ -95,11 +95,31 @@ export function CrashCurve({ curve, phase }: Props) {
               ))}
               <circle r={9} fill="var(--crash)" />
             </g>
-          ) : (
-            <g>
-              <path d="M-26 -7 L-40 0 L-26 7 Z" fill="var(--neon-soft)" opacity={0.55} />
-              <path d="M22 0 L-14 -13 L-6 0 L-14 13 Z" fill="var(--neon)" />
-              <circle cx={2} cy={0} r={3.2} fill="var(--primary-foreground)" />
+            ) : (
+            <g transform="translate(-15, -15) scale(1.2)">
+              {/* Corpo do Foguete */}
+              <path 
+                d="M10,25 C10,25 15,5 25,5 C35,5 40,25 40,25 L40,40 L10,40 Z" 
+                fill="var(--neon)" 
+                transform="rotate(90, 25, 25)"
+              />
+              {/* Ponta */}
+              <path 
+                d="M25,5 L32,15 L18,15 Z" 
+                fill="white" 
+                transform="rotate(90, 25, 25)"
+              />
+              {/* Asas laterais */}
+              <path d="M10,35 L5,45 L15,40 Z" fill="var(--neon-soft)" transform="rotate(90, 25, 25)" />
+              {/* Janela */}
+              <circle cx="25" cy="25" r="4" fill="var(--primary-foreground)" transform="rotate(90, 25, 25)" />
+              {/* Fogo do propulsor */}
+              <path 
+                d="M20,40 L25,50 L30,40 Z" 
+                fill="#FF4D00" 
+                className="animate-pulse"
+                transform="rotate(90, 25, 25)"
+              />
             </g>
           )}
         </g>

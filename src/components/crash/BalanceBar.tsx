@@ -1,4 +1,4 @@
-import { PlusCircle, Zap } from "lucide-react";
+import { Rocket } from "lucide-react";
 import { formatCredits } from "@/lib/format";
 
 export function BalanceBar({ balance, onAddCredits }: { balance: number; onAddCredits: () => void }) {
@@ -9,7 +9,7 @@ export function BalanceBar({ balance, onAddCredits }: { balance: number; onAddCr
           className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl"
           style={{ background: "var(--gradient-neon)", boxShadow: "var(--shadow-neon)" }}
         >
-          <Zap className="h-5 w-5 text-primary-foreground" />
+          <Rocket className="h-5 w-5 text-primary-foreground fill-current" />
         </div>
         <div className="min-w-0">
           <h1 className="truncate font-display text-lg font-black tracking-[0.2em] sm:text-xl">

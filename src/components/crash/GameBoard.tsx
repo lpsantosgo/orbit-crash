@@ -34,6 +34,15 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
       style={{ boxShadow: crashed ? "var(--shadow-crash)" : "var(--shadow-neon)" }}
     >
       <div className="grid-backdrop absolute inset-0 opacity-60" aria-hidden="true" />
+      
+      {/* Fundo animado de estrelas */}
+      <div 
+        className={cn(
+          "stars-backdrop absolute inset-0 opacity-30",
+          phase === "RUNNING" && "animate-[star-move_20s_linear_infinite]"
+        )}
+        aria-hidden="true" 
+      />
 
       <div className="relative flex items-center justify-between gap-3 px-4 pt-4 sm:px-6">
         <span className="font-display text-sm font-bold tracking-[0.4em] text-muted-foreground">

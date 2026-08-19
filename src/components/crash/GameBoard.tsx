@@ -89,15 +89,15 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-4 text-center">
           {phase === "COUNTDOWN" ? (
             <div className="animate-pop-in flex flex-col items-center gap-4">
-              <p className="font-display text-xs font-bold tracking-[0.3em] text-muted-foreground">
-                PRÓXIMA RODADA EM
+              <p className="font-display text-sm font-bold tracking-[0.4em] text-muted-foreground uppercase">
+                Próxima Rodada em
               </p>
-              <p className="neon-text font-display text-6xl font-black tabular-nums sm:text-7xl">
+              <p className="font-display text-7xl font-black tracking-tighter text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.3)] tabular-nums sm:text-9xl">
                 {seconds}s
               </p>
-              <div className="h-1 w-40 overflow-hidden rounded-full bg-secondary sm:w-56">
+              <div className="h-1.5 w-40 overflow-hidden rounded-full bg-secondary/30 sm:w-56">
                 <div
-                  className="h-full rounded-full transition-[width] duration-100 ease-linear"
+                  className="h-full rounded-full transition-[width] duration-100 ease-linear shadow-[0_0_10px_var(--neon)]"
                   style={{ width: `${progress * 100}%`, background: "var(--gradient-neon)" }}
                 />
               </div>

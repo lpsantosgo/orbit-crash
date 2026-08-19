@@ -115,10 +115,10 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
               )}
               <p
                 className={cn(
-                  "font-display text-[19vw] leading-[0.95] font-black tabular-nums sm:text-[7rem] lg:text-[8.5rem]",
-                  crashed ? "crash-text" : "neon-text",
+                  "font-display font-black tracking-tighter tabular-nums text-[22vw] leading-none sm:text-[9rem] lg:text-[10rem]",
+                  crashed ? "crash-text" : "text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]",
                 )}
-                style={{ transform: phase === "RUNNING" ? "scale(1)" : undefined }}
+                style={{ transform: phase === "RUNNING" ? "scale(1.05)" : undefined }}
               >
                 {formatMultiplier(crashed ? crashPoint : multiplier)}
               </p>

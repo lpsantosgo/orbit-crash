@@ -9,12 +9,12 @@ import { useCrashGame } from "@/game/useCrashGame";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Crash Game" },
+      { title: "Rocket Crash" },
       {
         name: "description",
         content: "Crash Game - Multiplicador ao vivo e saque instantâneo.",
       },
-      { property: "og:title", content: "Crash Game" },
+      { property: "og:title", content: "Rocket Crash" },
       {
         property: "og:description",
         content: "Multiplicador dinâmico e histórico de rodadas.",

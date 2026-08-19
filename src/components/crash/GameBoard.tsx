@@ -110,7 +110,7 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
                 VOCÊ SACOU EM {formatMultiplier(lastWin.multiplier)}
               </p>
               <p className="text-xs text-foreground/80">
-                +{formatCredits(lastWin.amount)} créditos virtuais
+                +{formatCredits(lastWin.amount)}
               </p>
             </div>
           )}

@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useAudio } from "./useAudio";
 import type { GamePhase, PlayerBet, RoundRecord, SimulatedPlayer } from "./types";
 
 /**
@@ -90,6 +91,7 @@ export function useCrashGame(): CrashGameState {
   const [players, setPlayers] = useState<SimulatedPlayer[]>(buildPlayers);
   const [curve, setCurve] = useState<{ x: number; y: number }[]>([{ x: 0, y: 1 }]);
   const [lastWin, setLastWin] = useState<{ multiplier: number; amount: number } | null>(null);
+  const { play } = useAudio();
 
   const phaseRef = useRef(phase);
   phaseRef.current = phase;
@@ -145,6 +147,7 @@ export function useCrashGame(): CrashGameState {
         return false;
       });
       setPhase("RUNNING");
+      play("launch");
       const start = performance.now();
       const duration = elapsedFor(point);
 
@@ -179,6 +182,7 @@ export function useCrashGame(): CrashGameState {
 
     const crash = (point: number) => {
       setPhase("CRASH");
+      play("crash");
       setPlayers((prev) => prev.map((p) => (p.cashedAt === null ? { ...p, cashedAt: "CRASH" } : p)));
       setHistory((h) => [{ id: roundId.current++, multiplier: point }, ...h].slice(0, 24));
       later(() => {
@@ -226,7 +230,8 @@ export function useCrashGame(): CrashGameState {
     setBet({ ...active, cashedOutAt: at });
     setBalance((b) => b + amount);
     setLastWin({ multiplier: at, amount });
-  }, [multiplier]);
+    play("win");
+  }, [multiplier, play]);
 
   const addCredits = useCallback(() => setBalance((b) => b + 1000), []);
 

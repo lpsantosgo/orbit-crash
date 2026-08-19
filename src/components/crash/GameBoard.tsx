@@ -57,7 +57,7 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
       </div>
 
       <div className="relative flex items-center justify-between gap-3 px-4 pt-4 sm:px-6">
-        <span className="font-display text-sm font-bold tracking-[0.4em] text-muted-foreground">
+        <span className="font-display text-[0.6rem] font-bold tracking-[0.4em] text-white/20 uppercase">
           LP Gaming
         </span>
         <span

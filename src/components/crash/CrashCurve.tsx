@@ -97,7 +97,7 @@ export function CrashCurve({ curve, phase }: Props) {
               <circle r={9} fill="var(--crash)" />
             </g>
             ) : (
-            <g transform="translate(-55, -55)">
+            <g transform="translate(-40, -40)">
               {/* Partículas de Rastro */}
               {!crashed && (
                 <g>
@@ -109,7 +109,7 @@ export function CrashCurve({ curve, phase }: Props) {
                       className="animate-[particle-fade_0.6s_ease-out_infinite]"
                       style={{
                         animationDelay: `${i * 0.1}s`,
-                        transformOrigin: '55px 55px'
+                        transformOrigin: '40px 40px'
                       }}
                     />
                   ))}

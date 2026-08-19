@@ -11,7 +11,7 @@ const tone = (m: number) =>
 
 export function RoundHistory({ history }: { history: RoundRecord[] }) {
   return (
-    <section className="glass-panel rounded-2xl p-4">
+    <section className="glass-panel rounded-2xl p-4 border-none shadow-none bg-transparent">
       <h2 className="font-display text-[0.7rem] font-bold tracking-[0.22em] text-muted-foreground">
         RODADAS ANTERIORES
       </h2>

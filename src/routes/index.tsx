@@ -9,17 +9,15 @@ import { useCrashGame } from "@/game/useCrashGame";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lumen Crash — Simulador de Crash Game com Créditos Virtuais" },
+      { title: "Crash Game" },
       {
         name: "description",
-        content:
-          "Lumen Crash é uma simulação educacional de crash game: multiplicador ao vivo, saque instantâneo e créditos virtuais. Sem dinheiro real.",
+        content: "Crash Game - Multiplicador ao vivo e saque instantâneo.",
       },
-      { property: "og:title", content: "Lumen Crash — Simulador de Crash Game" },
+      { property: "og:title", content: "Crash Game" },
       {
         property: "og:description",
-        content:
-          "Protótipo de interface de crash game com multiplicador dinâmico, histórico de rodadas e créditos fictícios.",
+        content: "Multiplicador dinâmico e histórico de rodadas.",
       },
     ],
   }),
@@ -68,9 +66,8 @@ function Index() {
         </aside>
       </div>
 
-      <footer className="pb-2 text-center text-[0.7rem] leading-relaxed text-muted-foreground">
-        Lumen Crash é um protótipo de interface criado exclusivamente para estudo e demonstração.
-        Todos os valores são créditos fictícios — não há pagamentos, depósitos ou saques reais.
+      <footer className="pb-2 text-center text-[0.7rem] leading-relaxed text-muted-foreground opacity-0 pointer-events-none">
+        Copyright &copy; {new Date().getFullYear()}
       </footer>
     </main>
   );

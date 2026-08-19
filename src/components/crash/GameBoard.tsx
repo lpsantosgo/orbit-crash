@@ -109,8 +109,8 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
           ) : (
             <div className="animate-pop-in flex flex-col items-center">
               {crashed && (
-                <p className="font-display text-xs font-black tracking-[0.34em] text-crash sm:text-sm">
-                  CRASHED AT
+                <p className="font-display text-xs font-black tracking-[0.34em] text-crash sm:text-sm uppercase">
+                  EXPLODIU EM
                 </p>
               )}
               <p

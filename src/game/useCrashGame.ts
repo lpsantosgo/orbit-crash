@@ -17,18 +17,7 @@ const CRASH_HOLD_MS = 3200;
 const GROWTH = 0.00023; // velocidade de crescimento do multiplicador
 const MAX_POINTS = 420;
 
-const NAMES = [
-  "Carlos",
-  "Lucas",
-  "Marcos",
-  "Pedro",
-  "Ana",
-  "Julia",
-  "Rafael",
-  "Bianca",
-  "Diego",
-  "Helena",
-];
+import { PLAYER_NAMES } from "./playerNames";
 
 const randomCrashPoint = () => {
   // Distribuição fictícia com cauda longa (apenas para demonstração)
@@ -41,11 +30,13 @@ const multiplierAt = (elapsed: number) => Math.exp(GROWTH * elapsed);
 const elapsedFor = (multiplier: number) => Math.log(multiplier) / GROWTH;
 
 const buildPlayers = (): SimulatedPlayer[] => {
-  const shuffled = [...NAMES].sort(() => Math.random() - 0.5).slice(0, 7);
+  // Aumentar o número de jogadores visíveis para dar mais realismo
+  const playerCount = 15 + Math.floor(Math.random() * 15);
+  const shuffled = [...PLAYER_NAMES].sort(() => Math.random() - 0.5).slice(0, playerCount);
   return shuffled.map((name, i) => ({
-    id: `${name}-${i}`,
+    id: `${name}-${i}-${Math.random()}`,
     name,
-    bet: [10, 25, 50, 100, 150, 200, 500][Math.floor(Math.random() * 7)] ?? 50,
+    bet: [10, 20, 50, 100, 200, 500, 1000, 2000, 5000][Math.floor(Math.random() * 9)] ?? 50,
     cashedAt: null,
   }));
 };

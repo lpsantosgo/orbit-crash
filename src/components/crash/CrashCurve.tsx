@@ -96,9 +96,10 @@ export function CrashCurve({ curve, phase }: Props) {
               <circle r={9} fill="var(--crash)" />
             </g>
             ) : (
-            <g transform="translate(-40, -40)">
-              <foreignObject width="80" height="80">
+            <g transform="translate(-40, -42)">
+              <foreignObject width="90" height="90">
                 <img 
+
                   src="https://em-content.zobj.net/source/noto-emoji-animations/344/rocket_1f680.gif" 
                   alt="Rocket"
                   className="h-full w-full object-contain"

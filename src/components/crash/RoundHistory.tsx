@@ -11,8 +11,8 @@ const tone = (m: number) =>
 
 export function RoundHistory({ history }: { history: RoundRecord[] }) {
   return (
-    <section className="glass-panel rounded-2xl p-4 border-none shadow-none bg-transparent">
-      <h2 className="font-display text-[0.7rem] font-bold tracking-[0.22em] text-muted-foreground invisible">
+    <section className="invisible pointer-events-none h-0 p-0 overflow-hidden">
+      <h2 className="font-display text-[0.7rem] font-bold tracking-[0.22em] text-muted-foreground">
         RODADAS ANTERIORES
       </h2>
       <div className="mt-3 flex gap-2 overflow-x-auto pb-1 lg:flex-wrap lg:overflow-visible">

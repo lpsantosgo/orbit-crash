@@ -1,8 +1,11 @@
+import { useMemo } from "react";
 import { cn } from "@/lib/utils";
 import { formatCredits, formatMultiplier } from "@/lib/format";
 import type { SimulatedPlayer } from "@/game/types";
 
 export function PlayersList({ players }: { players: SimulatedPlayer[] }) {
+  const totalBet = useMemo(() => players.reduce((sum, p) => sum + p.bet, 0), [players]);
+
   return (
     <section className="glass-panel rounded-2xl p-4">
       <header className="flex items-center justify-between gap-3">
@@ -10,7 +13,7 @@ export function PlayersList({ players }: { players: SimulatedPlayer[] }) {
           JOGADORES
         </h2>
         <span className="rounded-full bg-secondary px-2 py-0.5 text-[0.65rem] font-semibold text-muted-foreground">
-          jogadores
+          {formatCredits(totalBet)}
         </span>
       </header>
 

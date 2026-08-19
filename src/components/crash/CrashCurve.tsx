@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { cn } from "@/lib/utils";
 import type { GamePhase } from "@/game/types";
 
 interface Props {
@@ -97,9 +98,25 @@ export function CrashCurve({ curve, phase }: Props) {
             </g>
             ) : (
             <g transform="translate(-40, -42)">
-              <foreignObject width="90" height="90">
+              {/* Partículas de Rastro */}
+              {!crashed && (
+                <g>
+                  {[...Array(6)].map((_, i) => (
+                    <circle
+                      key={i}
+                      r={Math.random() * 3 + 1}
+                      fill="var(--neon)"
+                      className="animate-[particle-fade_0.6s_ease-out_infinite]"
+                      style={{
+                        animationDelay: `${i * 0.1}s`,
+                        transformOrigin: '40px 42px'
+                      }}
+                    />
+                  ))}
+                </g>
+              )}
+              <foreignObject width="90" height="90" className={cn(!crashed && "rocket-motion-blur")}>
                 <img 
-
                   src="https://em-content.zobj.net/source/noto-emoji-animations/344/rocket_1f680.gif" 
                   alt="Rocket"
                   className="h-full w-full object-contain"

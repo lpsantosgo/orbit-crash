@@ -97,7 +97,7 @@ export function CrashCurve({ curve, phase }: Props) {
               <circle r={9} fill="var(--crash)" />
             </g>
             ) : (
-            <g transform="translate(-55, -55)">
+            <g transform="translate(-40, -40)">
               {/* Partículas de Rastro */}
               {!crashed && (
                 <g>
@@ -109,18 +109,18 @@ export function CrashCurve({ curve, phase }: Props) {
                       className="animate-[particle-fade_0.6s_ease-out_infinite]"
                       style={{
                         animationDelay: `${i * 0.1}s`,
-                        transformOrigin: '55px 55px'
+                        transformOrigin: '40px 40px'
                       }}
                     />
                   ))}
                 </g>
               )}
-              <foreignObject width="110" height="110" className={cn(!crashed && "rocket-motion-blur")}>
+              <foreignObject width="80" height="80" className={cn(!crashed && "rocket-motion-blur")}>
                 <img 
                   src="https://em-content.zobj.net/source/noto-emoji-animations/344/rocket_1f680.gif" 
                   alt="Rocket"
                   className="h-full w-full object-contain"
-                  style={{ transform: 'rotate(45deg) translate(5px, -5px)' }}
+                  style={{ transform: 'rotate(45deg) translate(2px, -2px)' }}
                 />
               </foreignObject>
             </g>

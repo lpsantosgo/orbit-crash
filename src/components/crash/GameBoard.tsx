@@ -35,14 +35,26 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
     >
       <div className="grid-backdrop absolute inset-0 opacity-60" aria-hidden="true" />
       
-      {/* Fundo animado de estrelas */}
-      <div 
-        className={cn(
-          "stars-backdrop absolute inset-0 opacity-30",
-          phase === "RUNNING" && "animate-[star-move_20s_linear_infinite]"
-        )}
-        aria-hidden="true" 
-      />
+      {/* Fundo Espacial Realista e Animado */}
+      <div className="absolute inset-0 overflow-hidden" aria-hidden="true">
+        {/* Nebulosas Distantes */}
+        <div className="nebula-cloud absolute -top-1/4 -left-1/4 h-full w-full opacity-10 animate-[nebula-pulse_15s_ease-in-out_infinite]" />
+        <div className="nebula-cloud absolute -bottom-1/4 -right-1/4 h-full w-full opacity-10 animate-[nebula-pulse_20s_ease-in-out_infinite_reverse]" style={{ '--neon': 'oklch(0.6 0.2 280)' } as any} />
+        
+        {/* Camadas de Estrelas com Parallax Simulado */}
+        <div 
+          className={cn(
+            "stars-layer absolute inset-[-1000px] opacity-40",
+            phase === "RUNNING" && "animate-[star-move_40s_linear_infinite]"
+          )}
+        />
+        <div 
+          className={cn(
+            "stars-layer absolute inset-[-1000px] opacity-20 scale-150",
+            phase === "RUNNING" && "animate-[star-move_20s_linear_infinite]"
+          )}
+        />
+      </div>
 
       <div className="relative flex items-center justify-between gap-3 px-4 pt-4 sm:px-6">
         <span className="font-display text-sm font-bold tracking-[0.4em] text-muted-foreground">

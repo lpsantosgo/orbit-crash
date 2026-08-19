@@ -10,7 +10,7 @@ export function PlayersList({ players }: { players: SimulatedPlayer[] }) {
           JOGADORES
         </h2>
         <span className="rounded-full bg-secondary px-2 py-0.5 text-[0.65rem] font-semibold text-muted-foreground">
-          simulados
+          jogadores
         </span>
       </header>
 

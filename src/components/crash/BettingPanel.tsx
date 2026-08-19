@@ -78,7 +78,7 @@ export function BettingPanel({
             className="h-12 w-full rounded-xl border border-border bg-background/60 px-4 pr-16 font-display text-lg font-bold tabular-nums outline-none transition-colors focus:border-primary/60 disabled:opacity-50"
           />
           <span className="pointer-events-none absolute top-1/2 right-4 -translate-y-1/2 text-[0.65rem] font-bold tracking-widest text-muted-foreground">
-            CRÉDITOS
+            R$
           </span>
         </div>
 

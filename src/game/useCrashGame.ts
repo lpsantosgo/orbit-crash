@@ -44,7 +44,7 @@ const buildPlayers = (): SimulatedPlayer[] => {
   return shuffled.map((name, i) => ({
     id: `${name}-${i}`,
     name,
-    bet: [10, 25, 50, 100, 150, 200, 500][Math.floor(Math.random() * 7)],
+    bet: [10, 25, 50, 100, 150, 200, 500][Math.floor(Math.random() * 7)] ?? 50,
     cashedAt: null,
   }));
 };
@@ -165,11 +165,12 @@ export function useCrashGame(): CrashGameState {
           return next;
         });
         setPlayers((prev) =>
-          prev.map((p) =>
-            p.cashedAt === null && targets.current[p.id] <= value && targets.current[p.id] < point
-              ? { ...p, cashedAt: targets.current[p.id] }
-              : p,
-          ),
+          prev.map((p) => {
+            const target = targets.current[p.id] ?? Infinity;
+            return p.cashedAt === null && target <= value && target < point
+              ? { ...p, cashedAt: target }
+              : p;
+          }),
         );
         frame.current = requestAnimationFrame(tick);
       };

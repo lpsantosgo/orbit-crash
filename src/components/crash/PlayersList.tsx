@@ -24,7 +24,7 @@ export function PlayersList({ players }: { players: SimulatedPlayer[] }) {
         <span className="text-right">GANHO</span>
       </div>
 
-      <ul className="mt-2 space-y-1">
+      <ul className="mt-2 space-y-1 max-h-[400px] overflow-y-auto pr-1 scrollbar-thin">
         {players.map((p) => {
           const lost = p.cashedAt === "CRASH";
           const open = p.cashedAt === null;

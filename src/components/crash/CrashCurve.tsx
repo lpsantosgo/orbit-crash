@@ -96,30 +96,15 @@ export function CrashCurve({ curve, phase }: Props) {
               <circle r={9} fill="var(--crash)" />
             </g>
             ) : (
-            <g transform="translate(-15, -15) scale(1.2)">
-              {/* Corpo do Foguete */}
-              <path 
-                d="M10,25 C10,25 15,5 25,5 C35,5 40,25 40,25 L40,40 L10,40 Z" 
-                fill="var(--neon)" 
-                transform="rotate(90, 25, 25)"
-              />
-              {/* Ponta */}
-              <path 
-                d="M25,5 L32,15 L18,15 Z" 
-                fill="white" 
-                transform="rotate(90, 25, 25)"
-              />
-              {/* Asas laterais */}
-              <path d="M10,35 L5,45 L15,40 Z" fill="var(--neon-soft)" transform="rotate(90, 25, 25)" />
-              {/* Janela */}
-              <circle cx="25" cy="25" r="4" fill="var(--primary-foreground)" transform="rotate(90, 25, 25)" />
-              {/* Fogo do propulsor */}
-              <path 
-                d="M20,40 L25,50 L30,40 Z" 
-                fill="#FF4D00" 
-                className="animate-pulse"
-                transform="rotate(90, 25, 25)"
-              />
+            <g transform="translate(-40, -40)">
+              <foreignObject width="80" height="80">
+                <img 
+                  src="https://em-content.zobj.net/source/noto-emoji-animations/344/rocket_1f680.gif" 
+                  alt="Rocket"
+                  className="h-full w-full object-contain"
+                  style={{ transform: 'rotate(45deg)' }}
+                />
+              </foreignObject>
             </g>
           )}
         </g>

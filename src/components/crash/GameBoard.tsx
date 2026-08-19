@@ -33,7 +33,7 @@ export function GameBoard({ phase, multiplier, crashPoint, countdown, curve, las
       )}
       style={{ boxShadow: crashed ? "var(--shadow-crash)" : "var(--shadow-neon)" }}
     >
-      <div className="grid-backdrop absolute inset-0 opacity-60" aria-hidden="true" />
+      <div className="grid-backdrop absolute inset-0 opacity-0" aria-hidden="true" />
       
       {/* Fundo Espacial Realista e Animado */}
       <div className="absolute inset-0 overflow-hidden" aria-hidden="true">

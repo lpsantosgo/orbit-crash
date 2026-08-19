@@ -227,20 +227,35 @@
 
 @keyframes star-move {
   from {
-    transform: translateX(0);
+    transform: translate(0, 0);
   }
   to {
-    transform: translateX(-100%);
+    transform: translate(-1000px, 1000px);
   }
 }
 
-@utility stars-backdrop {
+@keyframes nebula-pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.2) rotate(5deg);
+  }
+}
+
+@utility stars-layer {
   background-image: 
-    radial-gradient(1px 1px at 20px 30px, oklch(0.98 0.01 250), transparent),
-    radial-gradient(1.5px 1.5px at 40px 70px, oklch(0.98 0.01 250 / 80%), transparent),
-    radial-gradient(1px 1px at 50px 160px, oklch(0.98 0.01 250 / 60%), transparent),
-    radial-gradient(2px 2px at 90px 40px, oklch(0.98 0.01 250 / 90%), transparent),
-    radial-gradient(1.5px 1.5px at 130px 80px, oklch(0.98 0.01 250 / 70%), transparent),
-    radial-gradient(1px 1px at 160px 120px, oklch(0.98 0.01 250 / 50%), transparent);
-  background-size: 200px 200px;
+    radial-gradient(1px 1px at 25px 35px, white, transparent),
+    radial-gradient(2px 2px at 50px 75px, white, transparent),
+    radial-gradient(1px 1px at 80px 120px, white, transparent),
+    radial-gradient(1.5px 1.5px at 130px 45px, white, transparent),
+    radial-gradient(2px 2px at 170px 180px, white, transparent);
+  background-size: 400px 400px;
+}
+
+@utility nebula-cloud {
+  background: radial-gradient(circle at center, var(--neon) 0%, transparent 70%);
+  filter: blur(60px);
 }
